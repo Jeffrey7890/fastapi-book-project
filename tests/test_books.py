@@ -14,6 +14,13 @@ def test_get_single_book():
     assert data["title"] == "The Hobbit"
     assert data["author"] == "J.R.R. Tolkien"
 
+def test_get_invalid_book():
+    response = client.get("/books/999")
+    assert response.status_code == 404
+    data = response.json()
+    assert data['detail'] == 'Book Not Found'
+
+
 
 def test_create_book():
     new_book = {
