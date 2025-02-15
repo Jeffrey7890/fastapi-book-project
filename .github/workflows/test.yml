@@ -1,4 +1,4 @@
-name: HNG Continuous Integration 
+name: test 
 
 on:
   pull_request:
